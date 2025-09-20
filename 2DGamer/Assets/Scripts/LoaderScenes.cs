@@ -1,22 +1,18 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;  
+using UnityEngine.SceneManagement;
 
 public class LoaderScenes : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Timer timer; 
 
     public void LoadScene(string sceneName)
     {
+        if (timer != null)
+        {
+            timer.TimerStop();  
+            GameManager.Instance.SumaTimeGlobal(timer.GetCurrentTime());
+        }
+
         SceneManager.LoadScene(sceneName);
     }
 }

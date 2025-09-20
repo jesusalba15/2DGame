@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     public void SumaTimeGlobal(float timeScene)
     {
         Globaltime += timeScene;
-        Debug.Log("Tiempo total acumulado: " + Globaltime);
+        Debug.Log("Tiempo acumulado global: " + Globaltime);
     }
 
     public float Globaltime1 { get => Globaltime; set => Globaltime = value; }

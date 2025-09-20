@@ -47,15 +47,11 @@ public class Timer : MonoBehaviour
             print("STOP");
             isRunning = false;
             stopTime = timerTime;
-            Debug.Log(stopTime.ToString());
-            ///
-            //if (stopTime >= 30)
-            //{
-            //    respuestaAudio.clip = stop;
-            //    respuestaAudio.Play();
-            //}
 
+            
+            GameManager.Instance.SumaTimeGlobal(stopTime);
         }
+
     }
 
     public void TimerReset()
@@ -81,4 +77,10 @@ public class Timer : MonoBehaviour
             timerSeconds100.text = (seconds100Int < 10) ? "0" + seconds100Int : seconds100Int.ToString();
         }
     }
+    public float GetCurrentTime()
+    {
+        return timerTime; 
+    }
+
 }
+
